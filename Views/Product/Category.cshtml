@@ -1,11 +1,13 @@
-@* @using Northwind.Model
+@using Northwind.Model
 @model IEnumerable<Category>
 
-<div class="bg-primary m-1 p-1 text-white"><h4>Northwind Listing</h4></div>
+<div class="bg-primary m-1 p-1 text-white"><h4>Categories Listing</h4></div>
 <ul>
     @foreach (Category category in Model)
     {
-        <li>@category.CategoryName</li>
+        <li>@category.CategoryName - @category.Description</li>
+        
+        
     }
-</ul> *@
-<h1>hello</h1>
+    
+</ul>
