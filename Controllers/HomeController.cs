@@ -1,10 +1,16 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
+using Northwind.Model;
+using System.Linq;
 
 namespace Northwind.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index() => View();
+        // this controller depends on the NorthwindRepository
+        private NorthwindContext _northwindContext;
+        public HomeController(NorthwindContext db) => _northwindContext = db;
+
+        public ActionResult Index() => View(_northwindContext.Discounts.Where(d => d.StartTime <= DateTime.Now && d.EndTime > DateTime.Now).Take(3));
     }
 }
