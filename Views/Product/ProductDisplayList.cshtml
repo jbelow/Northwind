@@ -1,25 +1,22 @@
 @using Northwind.Model
 @model ViewProducts
 
-
-
 <table class="table">
-<thead>
+  <thead>
     <tr>
-        <th scope="col">Product</th>
-        <th scope="col">Price</th>
-        <th scope="col">Stock</th>
+      <th scope="col">Product</th>
+      <th scope="col">Price</th>
+      <th scope="col">Stock</th>
     </tr>
-</thead>
+  </thead>
   <tbody>
-          @foreach (Product product in Model.products)
+    @foreach (Product product in Model.products)
     {
-       <tr>
-      <th scope="row">@product.ProductName</th>
-      <td>$@product.UnitPrice</td>
-      <td>@product.UnitsInStock</td>
-    </tr> 
+      <tr>
+        <th scope="row">@product.ProductName</th>
+        <td>$@product.UnitPrice</td>
+        <td>@product.UnitsInStock</td>
+      </tr>
     }
-    
   </tbody>
 </table>
