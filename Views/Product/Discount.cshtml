@@ -1,0 +1,21 @@
+@using Northwind.Model
+@model IEnumerable<Discount>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (Discount d in Model)
+    {
+      <tr>
+        <th scope="row">@d.Title</th>
+        <td>@d.Description</td>
+
+      </tr>
+    }
+  </tbody>
+</table>
