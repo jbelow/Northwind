@@ -1,5 +1,5 @@
 @using Northwind.Model
-@model ViewProducts
+@model IEnumerable<Product>
 
 <table class="table">
   <thead>
@@ -10,12 +10,12 @@
     </tr>
   </thead>
   <tbody>
-    @foreach (Product product in Model.products)
+    @foreach (Product p in Model)
     {
       <tr>
-        <th scope="row">@product.ProductName</th>
-        <td>$@product.UnitPrice</td>
-        <td>@product.UnitsInStock</td>
+        <th scope="row">@p.ProductName</th>
+        <td>$@p.UnitPrice</td>
+        <td>@p.UnitsInStock</td>
       </tr>
     }
   </tbody>

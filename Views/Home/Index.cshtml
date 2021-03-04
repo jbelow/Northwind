@@ -31,7 +31,7 @@
                 @d.Description
             </div>
             <i>Discount expires: @d.EndTime.ToString("MM/dd/yyyy")</i><br />
-            <a href="#" class="code" data-code="@d.Code" data-product="@d.Title"><i class="far fa-hand-point-right"></i> Discount Code</a>
+            <a href="#" class="code" id="@d.DiscountId" data-code="@d.Code" data-product="@d.Title"><i class="far fa-hand-point-right"></i> Discount Code</a>
         </div>
     }
 </div>
