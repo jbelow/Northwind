@@ -11,6 +11,25 @@ namespace Northwind.Controllers
         private NorthwindContext _northwindContext;
         public CustomerController(NorthwindContext db) => _northwindContext = db;
 
-        public ActionResult Register() => View();
+        public IActionResult Register() => View();
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Register(Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                if (_northwindContext.Customers.Any(b => b.CompanyName == customer.CompanyName))
+                {
+                    ModelState.AddModelError("", "Name must be unique");
+                }
+                else
+                {
+                    _northwindContext.AddCustomer(customer);
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            return View();
+        }
     }
 }
