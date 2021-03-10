@@ -1,9 +1,11 @@
-
+using System.ComponentModel.DataAnnotations;
 namespace Northwind.Model
 {
     public class Customer
     {
         public int CustomerId { get; set; }
+
+        [Required]
         public string CompanyName { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
