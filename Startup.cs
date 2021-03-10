@@ -43,7 +43,9 @@ namespace Northwind
                 app.UseDeveloperExceptionPage();
             }
 
+            //this lets me use the files in wwwroot folder like css, html, and js
             app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
